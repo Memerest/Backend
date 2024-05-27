@@ -1,7 +1,5 @@
 import uvicorn
-from fastapi import FastAPI
-
-app = FastAPI()
+from auth.auth import auth
 
 if __name__ == "__main__":
-    uvicorn.run(app, port=8080)
+    uvicorn.run("auth.auth:auth", host="127.0.0.1", port=8000, reload=True)
